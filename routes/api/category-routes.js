@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
   Category.findAll()
-    // {
-    .then(dbCatData => res.json(dbCatData))
+    .then(categoryData => res.json(categoryData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -23,12 +22,12 @@ router.get('/', (req, res) => {
   //     attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
   //   }
   // })
-  //   .then(dbCatData => {
-  //     if(!dbCatData) {
+  //   .then(categoryData => {
+  //     if(!categoryData) {
   //       res.status(404).json({message: 'No categories found'});
   //       return;
   //     }
-  //     res.json(dbCatData);
+  //     res.json(categoryData);
   //   })
   //   .catch(err => {
   //     console.log(err);
@@ -44,12 +43,12 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbCatData => {
-      if (!dbCatData) {
-        res.status(404).json({ message: 'No user found with this id' });
+    .then(categoryData => {
+      if (!categoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
         return;
       }
-      res.json(dbCatData);
+      res.json(categoryData);
     })
     .catch(err => {
       console.log(err);
@@ -62,7 +61,7 @@ router.post('/', (req, res) => {
   Category.create({
     category_name: req.body.category_name
   })
-    .then(dbCatData => res.json(dbCatData))
+    .then(categoryData => res.json(categoryData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -76,12 +75,12 @@ router.put('/:id', (req, res) => {
     id: req.params.id
   }
 })
-  .then(dbCatData => {
-    if (!dbCatData[0]) {
-      res.status(404).json({ message: 'No user found with this id' });
+  .then(categoryData => {
+    if (!categoryData[0]) {
+      res.status(404).json({ message: 'No category found with this id' });
       return;
     }
-    res.json(dbCatData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
@@ -96,12 +95,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbCatData => {
-      if (!dbCatData) {
-        res.status(404).json({ message: 'No user found with this id' });
+    .then(categoryData => {
+      if (!categoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
         return;
       }
-      res.json(dbCatData);
+      res.json(categoryData);
     })
     .catch(err => {
       console.log(err);
