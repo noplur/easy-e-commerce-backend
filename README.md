@@ -5,7 +5,7 @@
 
 ### The database models include Category, Product with a reference to the Category model's id, Tag, and ProductTag with a reference to the product model's id and the tag model's id. In addition to completing the API routes to perform RESTful CRUD operations, I executed the association methods to create relationships between: Product belongs to Category, Category has many Product models, Product belongs to many Tag models, and Tag belongs to many Product models. 
 
-#### To use Easy E-Commerce Backend, clone the [app](https://github.com/noplur/easy-e-commerce-backend), use Terminal to go to the Easy E-Commerce Backend's root directory. Navigate to the MySQL shell and type "mysql -u root -p". Enter the prompt for your password and execute the following command: "source db/schema.sql". Typing in "show databases" should ensure the database was created. Then enter "quit", "npm run seed" and "npm start". From there the API routes can be carried out through Insomnia Core.
+#### To use Easy E-Commerce Backend, clone the [app](https://github.com/noplur/easy-e-commerce-backend), use Terminal to go to the Easy E-Commerce Backend's root directory. Navigate to the MySQL shell and type "mysql -u root -p". Enter the prompt for your password and execute the following command: "source db/schema.sql". Typing in "show databases" should ensure the database is created. Then enter "quit", followed by "npm run seed" and finally "npm start". From there the API routes can be carried out through Insomnia Core.
 
 ### The Easy E-Commerce Backend walk-through video can be viewed here: https://drive.google.com/file/d/11Wv3wtgieue3e2xZlY02wTh8k0L9qfWZ/view
 
